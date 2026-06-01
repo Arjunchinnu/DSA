@@ -1,6 +1,4 @@
 
-import java.util.HashMap;
-import java.util.Map;
 
 // Find the number that appears once, and the other numbers twice
 
@@ -19,6 +17,8 @@ import java.util.Map;
 // Explanation: In this array, only element 4 appear once and the other elements appear twice. So, 4 is the answer.
 
 
+import java.util.HashMap;
+import java.util.Map;
 class NumberAppearOnce{
 
     // public static int appearOnce(int[] arr){
