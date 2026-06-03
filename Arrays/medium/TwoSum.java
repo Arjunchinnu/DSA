@@ -24,7 +24,7 @@ class TwoSum{
         int right = n-1;
         int sum = 0;
 
-        while(left != n){
+        while(left < n){
             sum = arr[left] + arr[right];
 
             if(sum == target){
