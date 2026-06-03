@@ -16,37 +16,34 @@
 // Output : NO.
 // Explanation: There exist no such two numbers whose sum is equal to the target. 
 
+import java.util.HashSet;
 
 class TwoSum{
 
-    static boolean twoSum(int[] arr,int n,int target){
-        int left = 0;
-        int right = n-1;
-        int sum = 0;
 
-        while(left < n){
-            sum = arr[left] + arr[right];
+    static boolean twoSum(int[] arr,int target){
 
-            if(sum == target){
+        HashSet <Integer> set = new HashSet<>();
+
+        for(int num :arr){
+            int candidate = target - num;
+
+            if(set.contains(candidate)){
                 return true;
             }
 
-            if(left == right){
-                right = n-1;
-                left++;
-            }
-            right --;
+            set.add(num);
         }
-        return false;
 
+        return false;
     }
 
     public static void main(String[] a){
         int n = 5;
         int[] arr = {2,6,5,8,11};
-        int target = 14;
+        int target = 15;
 
-        System.out.println(twoSum(arr, n, target)?"yes":"no");
+        System.out.println(twoSum(arr, target)?"yes":"no");
     }
 
 }
