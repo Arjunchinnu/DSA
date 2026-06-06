@@ -21,7 +21,7 @@ import java.util.HashSet;
 class TwoSum{
 
 
-    static boolean twoSum(int[] arr,int target){
+    static String twoSum(int[] arr,int target){
 
         HashSet <Integer> set = new HashSet<>();
 
@@ -29,13 +29,13 @@ class TwoSum{
             int candidate = target - num;
 
             if(set.contains(candidate)){
-                return true;
+                return "yes";
             }
 
             set.add(num);
         }
 
-        return false;
+        return "no";
     }
 
     public static void main(String[] a){
@@ -43,7 +43,7 @@ class TwoSum{
         int[] arr = {2,6,5,8,11};
         int target = 15;
 
-        System.out.println(twoSum(arr, target)?"yes":"no");
+        System.out.println(twoSum(arr, target));
     }
 
 }

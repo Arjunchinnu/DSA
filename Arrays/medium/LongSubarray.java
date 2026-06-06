@@ -1,32 +1,33 @@
-wpublic class LongSubarray {
+class LongSubarray {
+    public static int longestSubarray(int[] nums, int k) {
+        int left = 0;
+        int right = 0;
+        int sum = 0;
+        int maxCount = 0;
+        while(right < nums.length){
 
-    public static int kSubArray(int[] arr,int target){
-        
-        int max = 0;
+            sum += nums[right];
+            right++;
 
-        for (int i = 0; i < arr.length; i++) {
-            for(int j = i;j < arr.length;j++){
-                int sum = 0;
-                int count = 0;
+            while(sum > k){
+                sum -= nums[left];
+                left++;
+            }
+           
 
-                for(int k = i;k<=j;k++){
-                    sum += arr[k];
-                    count++;
-                }
-                if(sum == target && count > max){
-                    max = count;
-                }
+            if(sum == k){
+                maxCount = Math.max(maxCount,(right - left));
             }
         }
-
-       return max;
+        return maxCount;
+       
     }
 
-    public static void main(String[] a){
-        int[] arr = {10, 5, 2, 7, 1, 9};
-        int target = 15;
-        
-        System.out.println(kSubArray(arr,target));
-    }
-    
+     public static void main(String[] args) {
+        int[] arr = {10,5,2,7,1,9};
+        int k = 15;
+        System.out.println(longestSubarray(arr,k));
 }
+
+    }
+   
